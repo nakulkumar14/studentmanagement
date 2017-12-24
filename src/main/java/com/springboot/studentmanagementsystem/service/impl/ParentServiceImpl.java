@@ -18,4 +18,9 @@ public class ParentServiceImpl implements IParentService {
     public Parent getParentDetailsByStudentId(Long id) {
         return parentRepository.findByStudentId(id);
     }
+
+    @Override
+    public void save(Parent parent) {
+        parentRepository.save(parent);
+    }
 }

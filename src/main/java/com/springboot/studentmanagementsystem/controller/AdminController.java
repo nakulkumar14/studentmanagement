@@ -13,6 +13,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired
@@ -58,6 +59,12 @@ public class AdminController {
 	public Parent getParentDetailsByStudentId(@PathVariable("id") Long id){
 		log.info("[AdminController][getParentDetailsByStudentId] id : {}",id);
 		return parentService.getParentDetailsByStudentId(id);
+	}
+
+	@RequestMapping(value = "/updateParentDetails", method = RequestMethod.POST)
+	public void updateParentDetails(@RequestBody Parent parent){
+		log.info("[AdminController][updateParentDetails] Parent : {}",parent);
+		parentService.save(parent);
 	}
 
 	

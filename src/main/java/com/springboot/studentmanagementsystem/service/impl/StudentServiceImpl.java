@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -44,6 +45,10 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public Student addStudent(Student student) {
+        student.setCreatedAt(new Date());
+        student.setUpdatedAt(new Date());
+        student.getParent().setCreatedAt(new Date());
+        student.getParent().setUpdatedAt(new Date());
         return studentRepository.save(student);
     }
 
