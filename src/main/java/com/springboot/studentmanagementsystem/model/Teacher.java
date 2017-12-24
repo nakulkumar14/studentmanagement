@@ -1,5 +1,6 @@
 package com.springboot.studentmanagementsystem.model;
 
+import com.springboot.studentmanagementsystem.types.Status;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,8 +21,9 @@ public @Data class Teacher {
     private Date dob;
     @Column(name = "mobile")
     private String mobile;
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private String status;
+    private Status status;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "leaving_date")

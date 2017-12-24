@@ -1,5 +1,6 @@
 package com.springboot.studentmanagementsystem.model;
 
+import com.springboot.studentmanagementsystem.types.Status;
 import lombok.Data;
 
 import javax.persistence.*;
