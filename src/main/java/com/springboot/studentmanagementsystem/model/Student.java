@@ -1,5 +1,6 @@
 package com.springboot.studentmanagementsystem.model;
 
+import com.springboot.studentmanagementsystem.types.Gender;
 import com.springboot.studentmanagementsystem.types.Status;
 import lombok.Data;
 
@@ -26,6 +27,11 @@ public @Data class Student{
     private String phone;
     @Column(name = "status")
     private String status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "leaving_date")
     private Date leavingDate;

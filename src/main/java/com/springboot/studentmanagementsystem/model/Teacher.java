@@ -1,14 +1,17 @@
 package com.springboot.studentmanagementsystem.model;
 
 import com.springboot.studentmanagementsystem.types.Status;
+import com.springboot.studentmanagementsystem.types.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+@Data
 @Table(name = "teacher")
-public @Data class Teacher {
+@Entity
+public class Teacher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -24,6 +27,10 @@ public @Data class Teacher {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "leaving_date")

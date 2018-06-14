@@ -1,5 +1,6 @@
 package com.springboot.studentmanagementsystem.model;
 
+import com.springboot.studentmanagementsystem.types.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,6 +24,9 @@ public @Data class Parent {
     private String mobile;
     @Column(name = "phone_no")
     private String phone;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
     private Date createdAt;
