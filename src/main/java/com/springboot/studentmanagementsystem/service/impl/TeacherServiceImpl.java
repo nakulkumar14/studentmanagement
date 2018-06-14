@@ -33,7 +33,7 @@ public class TeacherServiceImpl implements ITeacherService{
 
     @Override
     public List<Teacher> getTeacherByName(String name) {
-        return teacherRepository.findByName(name);
+        return teacherRepository.findByFirstName(name);
     }
 
     @Override
