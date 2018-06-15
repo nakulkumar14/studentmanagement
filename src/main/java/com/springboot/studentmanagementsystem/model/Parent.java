@@ -33,4 +33,13 @@ public @Data class Parent {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
+
+    @Column(name = "spouse_firstname")
+    private String spouseFirstname;
+    @Column(name = "spouse_lastname")
+    private String spouseLastname;
+    @Column(name = "spouse_mobile")
+    private String spouseMobile;
+    @Column(name = "spouse_dob")
+    private Date spouseDob;
 }

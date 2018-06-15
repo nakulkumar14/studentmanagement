@@ -6,7 +6,6 @@ import com.springboot.studentmanagementsystem.service.IParentService;
 import com.springboot.studentmanagementsystem.service.IStudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,8 +39,7 @@ public class AdminController {
 	@RequestMapping(value = "/addStudent", method = RequestMethod.POST)
 	public Student addStudent(@RequestBody Student student){
 		log.info("[AdminController][addStudent] Request for : {}",student);
-		studentService.addStudent(student);
-		return student;
+		return studentService.addStudent(student);
 	}
 
 	@RequestMapping(value = "/removeStudent/{id}", method = RequestMethod.GET)

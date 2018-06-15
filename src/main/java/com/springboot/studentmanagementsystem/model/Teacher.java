@@ -5,12 +5,15 @@ import com.springboot.studentmanagementsystem.types.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Table(name = "teacher")
 @Entity
-public class Teacher {
+public class Teacher implements Serializable{
+
+    private static final long serialVersionUID = -7538567099308472909L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
