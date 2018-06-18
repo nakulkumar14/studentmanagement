@@ -1,5 +1,6 @@
 package com.springboot.studentmanagementsystem.controller;
 
+import com.springboot.studentmanagementsystem.dto.SearchStudentRequest;
 import com.springboot.studentmanagementsystem.model.Parent;
 import com.springboot.studentmanagementsystem.model.Student;
 import com.springboot.studentmanagementsystem.service.IParentService;
@@ -8,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -65,5 +67,10 @@ public class AdminController {
 		parentService.save(parent);
 	}
 
+	@RequestMapping(value = "/student", method = RequestMethod.POST)
+	public List<Student> searchStudent(@RequestBody SearchStudentRequest request){
+		log.info("request : {}" , request);
+		return studentService.getStudentRecords(request);
+	}
 	
 }

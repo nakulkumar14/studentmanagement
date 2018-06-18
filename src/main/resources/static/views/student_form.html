@@ -1,0 +1,55 @@
+<form ng-submit="searchStudent(student)" method="post">
+    <label for="firstname">Firstname</label>
+    <input type="text" class="form-control" id="firstname" name="firstname" ng-model="student.firstname" placeholder="firstname">
+
+    <label for="lastname">Lastname</label>
+    <input type="text" class="form-control" id="lastname" ng-model="student.lastname" placeholder="lastname">
+
+    <label for="mobile">Mobile</label>
+    <input type="text" class="form-control" id="mobile" ng-model="student.mobile" placeholder="9988776655">
+
+    <label for="phone">Landline</label>
+    <input type="text" class="form-control" id="phone" ng-model="student.phone" placeholder="26345267">
+
+    <label for="gender">Gender</label>
+    <input class="form-check-input" type="radio" name="gender_male" id="gender_male" ng-model="student.gender" value="MALE" checked>
+    Male
+    <input class="form-check-input" type="radio" name="gender_female" id="gender_female" ng-model="student.gender" value="FEMALE">
+    Female
+
+    <br>
+    <label for="dob">DOB</label>
+    <input type="date" class="form-control" id="dob" ng-model="student.dob" placeholder="DD/MM/YYYY">
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+    <!--<div class="form-group">-->
+        <!--<label for="inputAddress2">Address 2</label>-->
+        <!--<input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
+    <!--</div>-->
+    <!--<div class="form-row">-->
+        <!--<div class="form-group col-md-6">-->
+            <!--<label for="inputCity">City</label>-->
+            <!--<input type="text" class="form-control" id="inputCity">-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-4">-->
+            <!--<label for="inputState">State</label>-->
+            <!--<select id="inputState" class="form-control">-->
+                <!--<option selected>Choose...</option>-->
+                <!--<option>...</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-2">-->
+            <!--<label for="inputZip">Zip</label>-->
+            <!--<input type="text" class="form-control" id="inputZip">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<div class="form-check">-->
+            <!--<input class="form-check-input" type="checkbox" id="gridCheck">-->
+            <!--<label class="form-check-label" for="gridCheck">-->
+                <!--Check me out-->
+            <!--</label>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<button type="submit" class="btn btn-primary">Sign in</button>-->

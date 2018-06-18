@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SMSController {
 
-    @RequestMapping("/")
+    @RequestMapping("/api")
     public String init(){
         log.info("[init]");
         return "index.html";
