@@ -70,7 +70,9 @@ public class AdminController {
 	@RequestMapping(value = "/student", method = RequestMethod.POST)
 	public List<Student> searchStudent(@RequestBody SearchStudentRequest request){
 		log.info("request : {}" , request);
-		return studentService.getStudentRecords(request);
+		List<Student> studentList = studentService.getStudentRecords(request);
+		log.info("[searchStudent] students : {}", studentList);
+		return studentList;
 	}
 	
 }

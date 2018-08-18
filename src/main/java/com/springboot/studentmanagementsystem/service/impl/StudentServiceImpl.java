@@ -5,6 +5,7 @@ import com.springboot.studentmanagementsystem.dao.specification.StudentSpecifica
 import com.springboot.studentmanagementsystem.dto.SearchStudentRequest;
 import com.springboot.studentmanagementsystem.model.Student;
 import com.springboot.studentmanagementsystem.service.IStudentService;
+import com.springboot.studentmanagementsystem.types.Status;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,7 @@ public class StudentServiceImpl implements IStudentService {
     public Student addStudent(Student student) {
         student.setCreatedAt(new Date());
         student.setUpdatedAt(new Date());
+        student.setStatus(Status.ACTIVE);
         student.getParent().setCreatedAt(new Date());
         student.getParent().setUpdatedAt(new Date());
         return studentRepository.save(student);

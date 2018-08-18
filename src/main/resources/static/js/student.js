@@ -1,5 +1,8 @@
 myApp.controller("StudentController",function ($scope,$http) {
     console.log("loaded student.js");
+
+    $scope.statuses = ['ACTIVE', 'INACTIVE'];
+
     $scope.getAllStudents = function () {
         $http.get("/admin/getAllStudents").success(function (response) {
             console.log(response);
@@ -29,12 +32,29 @@ myApp.controller("StudentController",function ($scope,$http) {
             data: student,
             headers : { 'Content-Type': 'application/json' }
         }).then(function (response) {
-            console.log('success' + JSON.stringify(response));
-                    // success
+            // console.log('success' + JSON.stringify(response));
+            $scope.persons = response.data;
+                // console.log('data : ' + JSON.stringify(response.data));
+            $("[id=personTable]").show();
+                // success
         },
         function (response) { // optional
             console.log('error' + response);
             // failed
+        });
+    };
+
+    $scope.addStudent = function (data) {
+        console.log("add : " + JSON.stringify(data));
+        $http({
+            url: '/admin/addStudent',
+            method: 'POST',
+            data: data
+        }).then(function (response) {
+                console.log('added data : ' + JSON.stringify(response));
+        },
+        function (response) { // optional
+            console.log('error' + response);
         });
     };
 });

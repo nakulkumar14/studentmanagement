@@ -1,0 +1,103 @@
+<form id="addStudent" ng-submit="addStudent(student)" method="post">
+<table class="table table-hover">
+    <tr>
+        <td>
+            <label for="firstName">Firstname</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" ng-model="student.firstName" placeholder="firstName">
+        </td>
+        <td>
+            <label for="lastName">Lastname</label>
+            <input type="text" class="form-control" id="lastName" ng-model="student.lastName" placeholder="lastName">
+        </td>
+        <td>
+            <label for="gender">Gender</label>
+            <div>
+                <input class="form-check-input" type="radio" name="gender_male" id="gender_male" ng-model="student.gender" value="MALE" checked>
+                Male
+            </div>
+            <div>
+                <input class="form-check-input" type="radio" name="gender_female" id="gender_female" ng-model="student.gender" value="FEMALE">
+                Female
+            </div>
+        </td>
+        <td>
+            <label for="dob">DOB</label>
+            <input type="date" class="form-control" id="dob" ng-model="student.dob" placeholder="DD/MM/YYYY">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="mobile">Mobile</label>
+            <input type="text" class="form-control" id="mobile" ng-model="student.mobile" placeholder="9988776655">
+        </td>
+        <td>
+            <label for="phone">Landline</label>
+            <input type="text" class="form-control" id="phone" ng-model="student.phone" placeholder="26345267">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="fatherFirstName">Father's First Name</label>
+            <input type="text" class="form-control" id="fatherFirstName" name="fatherFirstName" ng-model="student.parent.firstName" placeholder="fatherFirstName">
+        </td>
+        <td>
+            <label for="fatherLastName">Father's Last Name</label>
+            <input type="text" class="form-control" id="fatherLastName" name="fatherLastName" ng-model="student.parent.lastName" placeholder="fatherLastName">
+        </td>
+        <td>
+            <label for="fatherDob">Father's DOB</label>
+            <input type="date" class="form-control" id="fatherDob" ng-model="student.parent.dob" placeholder="DD/MM/YYYY">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="motherFirstName">Mother's First Name</label>
+            <input type="text" class="form-control" id="motherFirstName" name="motherFirstName" ng-model="student.parent.spouseFirstname" placeholder="motherFirstName">
+        </td>
+        <td>
+            <label for="motherLastName">Mother's Last Name</label>
+            <input type="text" class="form-control" id="motherLastName" name="motherLastName" ng-model="student.parent.spouseLastname" placeholder="motherLastName">
+        </td>
+        <td>
+            <label for="motherDob">Mother's DOB</label>
+            <input type="date" class="form-control" id="motherDob" ng-model="student.parent.spouseDob" placeholder="DD/MM/YYYY">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="addressLine1">Address Line1</label>
+            <input type="text" class="form-control" id="addressLine1" name="addressLine1" ng-model="student.address.addressLine1" placeholder="148 F, DDA Flats">
+        </td>
+        <td>
+            <label for="addressLine2">Address Line2</label>
+            <input type="text" class="form-control" id="addressLine2" name="addressLine2" ng-model="student.address.addressLine2" placeholder="XYZ Colony">
+        </td>
+        <td>
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" ng-model="student.address.city" placeholder="New delhi">
+        </td>
+        <td>
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" name="state" ng-model="student.address.state" placeholder="Delhi">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="pincode">Pincode</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" ng-model="student.address.pincode" placeholder="110011">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+        </td>
+    </tr>
+
+</table>
+</form>
