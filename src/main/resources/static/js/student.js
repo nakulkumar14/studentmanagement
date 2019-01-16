@@ -57,4 +57,23 @@ myApp.controller("StudentController",function ($scope,$http) {
             console.log('error' + response);
         });
     };
+
+    $scope.removeStudent = function(data) {
+      console.log("Deleting student with id : " + data);
+      if (confirm('Are you sure you want to delete this student record?')){
+          console.log('yes sure');
+
+          $http({
+              url : '/admin/student/' + data,
+              method : 'GET'
+          }.then(function (response) {
+              console.log("removeStudent : " + response);
+          }), function (response) {
+              console.log('error : ' + response);
+          });
+
+      }else{
+          console.log('not sure');
+      }
+    };
 });
